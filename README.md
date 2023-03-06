@@ -64,3 +64,5 @@ Each section that describes a component should include more than just one senten
 
 IMPORTANT
 Make revisions to your gist in the GitHub gist UI. This will create a revision history that graders can use to verify that the tutorial content is yours.
+
+=)
