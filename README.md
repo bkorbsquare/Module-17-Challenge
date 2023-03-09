@@ -9,7 +9,7 @@
 
 ## Installation
 
-View, comment, subscribe at https://gist.github.com/bkorbsquare/675736bff9955f604731cca0681e657c. 
+N/A
 
 ## Usage
 
@@ -19,7 +19,7 @@ Use this project to learn about Regex!
 
 ## Deployed Site
 
-N/A
+View, comment, subscribe at https://gist.github.com/bkorbsquare/675736bff9955f604731cca0681e657c. 
 
 ## Credits
 
