@@ -15,7 +15,7 @@ On GitHub.com, navigate to the main page of the repository. Click into "regex-da
 
 Use this project to learn about Regex!
 
-![image](/assets/Screenshot%202023-03-09%20001459.jpg)
+![image](/assets/Screenshot%202023-03-09%20010253.jpg)
 
 ## Deployed Site
 
