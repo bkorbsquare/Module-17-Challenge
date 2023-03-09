@@ -51,18 +51,6 @@ The OR operator (|) specifies at least one match from a series. Here we have the
 
 ([1-2][0-9]|3[0-1]|0?[1-9])
 
-### Character Classes
-
-A Character Class defines a set of characters. To reference on of our examples in the introduction, "\s" is a common Character Class that matches whitespace. One interesting note is that capitalizing many Character Classes changes them to perform the opposite match. In our example "\S" matches non-white space. 
-
-### Flags
-
-Flags are located at the end of a Regex (outside of the /), and define additional functionality or limits for the Regex. Here are three common flags:
-
-g—Global search: the regex should be tested against all possible matches in a string.
-i—Case-insensitive search: case should be ignored while attempting a match in a string
-m—Multi-line search: a multi-line input string should be treated as multiple lines
-
 ### Grouping and Capturing
 
 In order to check that different parts of a string meet different requirements, we use Grouping Constructs. The primary way to group a section of Regex is by using parentheses (()). Each section within such a grouping is called a Sub-expression. Here we have the first two Sub-expressions within our Dates Regex:
@@ -77,56 +65,40 @@ Meta Characters inside of square brackets ([]) represent the range we're looking
 
 ### Greedy and Lazy Match
 
-Greedy matches find as many occurrences of queried patterns as possible, and by contrast Lazy find as few as possible. You can make a match Lazy by adding "?" after the quantifier. 
+Greedy matches find as many occurrences of queried patterns as possible, and by contrast Lazy find as few as possible. You can make a match Lazy by adding "?" after the quantifier. How many Lazy matches does our Regex have? :thinking:
 
-### Boundaries
-
-Boundary Markers define what comes before or after. One type of Boundary Marker is the Word Boundary ("\b"). This Boundary matches positions where the specified side is:
-    Before the first character in a string if the first character is a word character.
-    After the last character in a string if the last character is a word character.
-    Between two characters in a string if one is a word character and the other is not.
-For example "/\bJS\b/" would match the "JS" in "Hello JS!", but not in "Hello JSscript." 
-
-Note that Anchors are a type of Boundary. 
+/^([1-2][0-9]|3[0-1]|0?[1-9])([-\.\/ ])(1[0-2]|0?[1-9])(\2)([\d]{4}|[\d]{2})$/
 
 ### Back-references
 
 Back-references are items in Regex equivalent to text matched by an earlier pattern within the same expression. We notate a Back-reference with a backslash ("\") followed by a number representing which Sub-expression we're referencing. Are we using any Back-references in our Date Regex? :eyes:
 
-/^([1-2][0-9]|3[0-1]|0?[1-9])([-\.\/ ])(1[0-2]|0?[1-9])(\2)([\d]{4}|[\d]{2})$/
-
-### Look-ahead and Look-behind
-
-Collectively called Look-around, Look-ahead and Look-behind are zero-length assertions that return only "match" or "no match". For example "(?=foo)" is a Look-ahead that asserts what immediately follows the current position in the string is "foo". The Look-behind (therefore asserting what immediately precedes the current position) for the same example would look like this "(?<=foo)". 
+/^([1-2][0-9]|3[0-1]|0?[1-9])([-\.\/ ])(1[0-2]|0?[1-9])(\2)([\d]{4}|[\d]{2})$/ 
 
 ## Assembling the pieces
 
-We've labeled the minutiae of Regex! Now let's use that knowledge to dissect our Dates example. :dart:
+We've labeled the minutiae of Regex! Now let's use that knowledge to dissect our Dates example. :nerd_face:
 
 /^([1-2][0-9]|3[0-1]|0?[1-9])([-\.\/ ])(1[0-2]|0?[1-9])(\2)([\d]{4}|[\d]{2})$/
 
-We've wrapped our Regex in the required forward slashes ("/"), and then we have our Anchor Boundaries ("^", "$") defining the start and end. 
-Let's start with our first Sub-expression:
-    ([1-2][0-9]|3[0-1]|0?[1-9])
+We've wrapped our Regex in the required forward slashes ("/"), and then we have our Anchor Boundaries ("^", "$") defining the start and end. Next let's look at each Sub-expression on it's own. 
+
+Sub-expression one: ([1-2][0-9]|3[0-1]|0?[1-9])
     Here we're validating the day of the month. We have a numeric digit 1 or two ("[1-2]") followed by a numeric digit 0-9 ("[0-9]"). Following the OR Operator ("|") we have the literal digit 3 followed by a numeric digit 0 or 1 ("[0-1]"). OR the literal digit 0 with a Lazy Operator ("?") signifying we want to see that "0" zero or one time, followed by a numeric digit 1-9 ("[1-9]"). That wraps up our first Capturing Group which should account for and find the possible combinations of numbers making up the day of the month!
 
-Sub-expression two:
-    ([-\.\/ ])
+Sub-expression two: ([-\.\/ ])
     Here we're defining the possible separators between day and month. We want only hyphen, dot, space, or slash (and we escape the dot and slash). 
 
-Sub-expression three:
-    (1[0-2]|0?[1-9])
+Sub-expression three: (1[0-2]|0?[1-9])
     Here we're validating the month, using many of the same Meta Characters as Sub-expression one. 
 
-Sub-expression four:
-    (\2)
+Sub-expression four: (\2)
     Here we're Back-referencing Sub-expression two, repeating the possible separators. 
     
-Sub-expression five:
-    ([\d]{4}|[\d]{2})
+Sub-expression five: ([\d]{4}|[\d]{2})
     Finally we're validating our year input. We're asking for any single numeric digit ("[\d]") four times ("{4}"), OR any single numeric digit twice ("|[\d]{2}"). 
 
-And just like that we've parsed an entire 77 character long Regex! I hope now you can break down and interpret most any Regex that you encounter, and even try writing your own! :100::100::100:
+And just like that we've parsed an entire 77 character long Regex! Now you can break down and interpret most any Regex that you encounter, and even write your own! :100::100::100:
 
 ## Author
 
