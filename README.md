@@ -23,7 +23,7 @@ N/A
 
 ## Credits
 
-Special thanks to my partner Laura Aviña for all her proofing and support (https://www.linkedin.com/in/laura-avina/).
+Special thanks to my partner Laura Aviña for all her proofing and support (https://www.linkedin.com/in/laura-avina/). The emoji picker I used - https://github-emoji-picker.vercel.app/ 
 
 ## License
 
