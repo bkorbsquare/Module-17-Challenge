@@ -9,7 +9,7 @@
 
 ## Installation
 
-On GitHub.com, navigate to the main page of the repository. Click into "regex-dates.md" file in the "Develop" folder. Click the "Copy raw contents" button on the top right, and paste into your text editor or word document etc. 
+View, comment, subscribe at https://gist.github.com/bkorbsquare/675736bff9955f604731cca0681e657c. 
 
 ## Usage
 
@@ -23,7 +23,7 @@ N/A
 
 ## Credits
 
-Special thanks to my partner Laura Aviña for all her proofing and support (https://www.linkedin.com/in/laura-avina/). The emoji picker I used - https://github-emoji-picker.vercel.app/ 
+Special thanks to my partner Laura Aviña for all her proofing and support (https://www.linkedin.com/in/laura-avina/). The emoji picker I used - https://github-emoji-picker.vercel.app/. 
 
 ## License
 
