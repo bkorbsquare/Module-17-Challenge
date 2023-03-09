@@ -29,12 +29,8 @@ The caret (^) and bling ($) symbols represent the start and end of Regex, and ar
 
 Quantifiers determine how exactly (or loosely) your regex matches the queried string. They usually include a minimum and maximum number of characters that your Regex is looking for. Here are some examples of quantifiers:
 
-*—Matches the pattern zero or more times
-+—Matches the pattern one or more times
 ?—Matches the pattern zero or one time
 { n }—Matches the pattern exactly n number of times
-{ n, }—Matches the pattern at least n number of times
-{ n, x }—Matches the pattern from a minimum of n number of times to a maximum of x number of times
 
 Note that if you wanted to make the "?" literal (actually searching for "?" and not using "?" as a quantifier), you would need to Escape. Escape allows you to break the default quantifier and instead input literals. We notate Escapes using the backslash ("\"). 
 
