@@ -17,6 +17,7 @@ Here we'll break down the components of Regex, taking a specific look at an exam
 - [Bracket Expressions](#bracket-expressions)
 - [Greedy and Lazy Match](#greedy-and-lazy-match)
 - [Back-references](#back-references)
+- [Assembling the Pieces](#assembling-the-pieces)
 
 ## Regex Components
 
