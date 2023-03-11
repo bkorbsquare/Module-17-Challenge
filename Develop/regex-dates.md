@@ -76,20 +76,20 @@ We've labeled the minutiae of Regex! Now let's use that knowledge to dissect our
 
 We've wrapped our Regex in the required forward slashes (/), and then we have our Anchor Boundaries (^, $) defining the start and end. Next let's look at each Sub-expression on it's own. 
 
-Sub-expression one: ([1-2][0-9]|3[0-1]|0?[1-9])
-    Here we're validating the day of the month. We've broken the possible inputs into three parts, each separated by an OR Operator (|). First we start with the days 10-29 represented by the digit 1 or 2 ([1-2]) followed by a digit 0-9 ([0-9]). Next we're accounting for days 30 & 31 with the digit 3 (3) followed by a digit 0 or 1 ([0-1]). Lastly we're accounting for days 1-9, with possible zeros in front, represented by a Lazy Operator (?) and a digit 1-9 ([1-9]).
+Sub-expression one: ([1-2][0-9]|3[0-1]|0?[1-9]) <br/>
+&nbsp;&nbsp;&nbsp;Here we're validating the day of the month. We've broken the possible inputs into three parts, each separated by an OR Operator (|). First we start with the days 10-29 represented by the digit 1 or 2 ([1-2]) followed by a digit 0-9 ([0-9]). Next we're accounting for days 30 & 31 with the digit 3 (3) followed by a digit 0 or 1 ([0-1]). Lastly we're accounting for days 1-9, with possible zeros in front, represented by a Lazy Operator (?) and a digit 1-9 ([1-9]).
 
-Sub-expression two: ([-\.\/ ])
-    Here we're defining the possible separators between day and month. We want only hyphen, dot, space, or slash (and we Escape the dot and slash). 
+Sub-expression two: ([-\.\/ ]) <br/>
+&nbsp;&nbsp;&nbsp;Here we're defining the possible separators between day and month. We want only hyphen, dot, space, or slash (and we Escape the dot and slash). 
 
-Sub-expression three: (1[0-2]|0?[1-9])
-    Here we're validating the month, using many of the same Meta Characters as Sub-expression one. 
+Sub-expression three: (1[0-2]|0?[1-9]) <br/>
+&nbsp;&nbsp;&nbsp;Here we're validating the month, using many of the same Meta Characters as Sub-expression one. 
 
-Sub-expression four: (\2)
-    Here we're Back-referencing Sub-expression two, repeating the possible separators. 
+Sub-expression four: (\2) <br/>
+&nbsp;&nbsp;&nbsp;Here we're Back-referencing Sub-expression two, repeating the possible separators. 
     
-Sub-expression five: ([\d]{4}|[\d]{2})
-    Finally we're validating the year. We're asking for any single digit ([\d]) four times ({4}), OR (|) any single digit twice ([\d]{2}). 
+Sub-expression five: ([\d]{4}|[\d]{2}) <br/>
+&nbsp;&nbsp;&nbsp;Finally we're validating the year. We're asking for any single digit ([\d]) four times ({4}), OR (|) any single digit twice ([\d]{2}). 
 
 And just like that we've parsed an entire 77 character long Regex! Now you can break down and interpret most any Regex that you encounter, and even write your own! :100::100::100:
 
