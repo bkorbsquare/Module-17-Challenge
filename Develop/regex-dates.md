@@ -4,7 +4,7 @@ Regular Expressions (or Regex) are sequences of characters that define a search 
 
 ## Summary
 
-We're going to break down the components of Regex, taking a specific look at the following example which can find dates in the format DD/MM/YYYY or DD/MM/YY.
+We're going to break down the components of Regex, taking a specific look at the following example which can find dates in the format DD/MM/YYYY or DD/MM/YY:
 
 /^([1-2][0-9]|3[0-1]|0?[1-9])([-\.\/ ])(1[0-2]|0?[1-9])(\2)([\d]{4}|[\d]{2})$/
 
@@ -40,9 +40,9 @@ Can you spot the Quantifiers in our Dates Regex? What do you suppose they're det
 
 ### OR Operator
 
-The OR operator (|) specifies at least one match from a series. Here we have the first instance(s) of the OR Operator in our Dates Regex:
+The OR operator (|) represnts logical "or". We use this to match either what preceeds or follows that pipe symbol (|). Each of these components is called an Alternative. We're using a few OR Operators in our Regex: :balance_scale:
 
-([1-2][0-9]|3[0-1]|0?[1-9])
+(1[0-2]|0?[1-9])(\2)([\d]{4}|[\d]{2})$/
 
 ### Grouping and Capturing
 
