@@ -32,7 +32,7 @@ Quantifiers determine how exactly (or loosely) your regex matches the queried st
 ? — Matches the pattern zero or one time.
 { n } — Matches the pattern exactly n number of times.
 
-Note that if you wanted to make the "?" literal (actually searching for "?" and not using "?" as a quantifier), you would need to Escape. Escape allows you to break the default quantifier and instead input literals. We notate Escapes using the backslash ("\"). 
+Note that if you wanted to make the "?" literal (actually searching for "?" and not using "?" as a quantifier), you would need to Escape. Escape allows you to break the default quantifier and instead input literals. We notate Escapes using the backslash (\). 
 
 Can you spot the Quantifiers in our Dates Regex? What do you suppose they're determining specifically? It's okay if you don't know yet, we'll break down the entire sequence under "Assembling the Pieces" once we round out the other Regex Components. :blush:
 
