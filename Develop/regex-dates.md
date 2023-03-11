@@ -34,7 +34,7 @@ Quantifiers determine how exactly (or loosely) your regex matches the queried st
 
 Note that if you wanted to make the "?" literal (actually searching for "?" and not using "?" as a quantifier), you would need to Escape. Escape allows you to break the default quantifier and instead input literals. We notate Escapes using a backslash (\\).
 
-Can you spot the Quantifiers in our Dates Regex? What do you suppose they're determining specifically? It's okay if you don't know yet, we'll break down the entire sequence under "Assembling the Pieces" once we round out the other Regex Components. :blush:
+Can you spot the Quantifiers in our Dates Regex? What do you suppose they're determining specifically? It's okay if you don't know yet, we'll break down the entire sequence later on under "Assembling the Pieces." :blush:
 
 /^([1-2][0-9]|3[0-1]|0?[1-9])([-\.\/ ])(1[0-2]|0?[1-9])(\2)([\d]{4}|[\d]{2})$/
 
@@ -46,7 +46,7 @@ The OR operator (|) represnts logical "or". We use this to match either what pre
 
 ### Grouping and Capturing
 
-In order to check that different parts of a string meet different requirements, we use Grouping Constructs. The primary way to group a section of Regex is by using parentheses (()). Each section within such a grouping is called a Sub-expression. Here we have the first two Sub-expressions within our Dates Regex:
+In order to check that different parts of a string meet different requirements, we use Grouping Constructs. The primary way to group a section of Regex is by using parentheses (()). Each section within such a grouping is called a Sub-expression. Here we have the first two Sub-expressions within our Dates Regex: :busts_in_silhouette:
 
 ([1-2][0-9]|3[0-1]|0?[1-9])([-\.\/ ]) 
 
@@ -64,7 +64,7 @@ Greedy matches find as many occurrences of queried patterns as possible, and by 
 
 ### Back-references
 
-Back-references are items in Regex equivalent to text matched by an earlier pattern within the same expression. We notate a Back-reference with a backslash ("\") followed by a number representing which Sub-expression we're referencing. Are we using any Back-references in our Date Regex? :eyes:
+Back-references are items in Regex equivalent to an earlier pattern within the same expression. We notate a Back-reference with a backslash followed by a number representing which Sub-expression we're referencing (\\1). Are we using any Back-references in our Date Regex? :eyes:
 
 /^([1-2][0-9]|3[0-1]|0?[1-9])([-\.\/ ])(1[0-2]|0?[1-9])(\2)([\d]{4}|[\d]{2})$/ 
 
@@ -74,10 +74,10 @@ We've labeled the minutiae of Regex! Now let's use that knowledge to dissect our
 
 /^([1-2][0-9]|3[0-1]|0?[1-9])([-\.\/ ])(1[0-2]|0?[1-9])(\2)([\d]{4}|[\d]{2})$/
 
-We've wrapped our Regex in the required forward slashes ("/"), and then we have our Anchor Boundaries ("^", "$") defining the start and end. Next let's look at each Sub-expression on it's own. 
+We've wrapped our Regex in the required forward slashes (/), and then we have our Anchor Boundaries (^, $) defining the start and end. Next let's look at each Sub-expression on it's own. 
 
 Sub-expression one: ([1-2][0-9]|3[0-1]|0?[1-9])
-    Here we're validating the day of the month. We've broken the possible inputs into three parts, each separated by an OR Operator ("|"). First we start with the days 10-29 represented by the digit 1 or 2 ("[1-2]") followed by a digit 0-9 ("[0-9]"). Next we're accounting for days 30 & 31 with the digit 3 ("3") followed by a digit 0 or 1 ("[0-1]"). Lastly we're accounting for days 1-9, with possible zeros in front, represented by a Lazy Operator ("?") and a digit 1-9 ("[1-9]").
+    Here we're validating the day of the month. We've broken the possible inputs into three parts, each separated by an OR Operator (|). First we start with the days 10-29 represented by the digit 1 or 2 ([1-2]) followed by a digit 0-9 ([0-9]). Next we're accounting for days 30 & 31 with the digit 3 (3) followed by a digit 0 or 1 ([0-1]). Lastly we're accounting for days 1-9, with possible zeros in front, represented by a Lazy Operator (?) and a digit 1-9 ([1-9]).
 
 Sub-expression two: ([-\.\/ ])
     Here we're defining the possible separators between day and month. We want only hyphen, dot, space, or slash (and we Escape the dot and slash). 
@@ -89,7 +89,7 @@ Sub-expression four: (\2)
     Here we're Back-referencing Sub-expression two, repeating the possible separators. 
     
 Sub-expression five: ([\d]{4}|[\d]{2})
-    Finally we're validating the year. We're asking for any single digit ("[\d]") four times ("{4}"), OR any single digit twice ("|[\d]{2}"). 
+    Finally we're validating the year. We're asking for any single digit ([\d]) four times ({4}), OR (|) any single digit twice ([\d]{2}). 
 
 And just like that we've parsed an entire 77 character long Regex! Now you can break down and interpret most any Regex that you encounter, and even write your own! :100::100::100:
 
